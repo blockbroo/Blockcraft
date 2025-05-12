@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+}
+
+header {
+  background: #00b894;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.models-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.models-section h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.model-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 0 1rem;
+}
+
+.model-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 174, 0.2);
+  transition: transform 0.3s;
+}
+
+.model-card:hover {
+  transform: scale(1.03);
+}
+
+.model-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.model-card h2 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #00b894;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: #00ffae;
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a1a;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+
+
+.help-us {
+  background: url('your-image.webp') center center/cover no-repeat;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.help-us .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* dark transparent overlay */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.help-us h1 {
+  color: #00ffcc;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.help-us p {
+  color: #ffffff;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ffcc;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin: 10px;
+}
+
+.home-button:hover {
+  background-color: #00ccaa;
+}

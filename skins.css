@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: white;
+  text-align: center;
+}
+
+.skins-header {
+  padding: 2rem 1rem 1rem;
+}
+
+.skins-header h1 {
+  font-size: 2.7rem;
+  color: #00ffcc;
+  text-shadow: 0 0 12px #00ffcc99;
+}
+
+.skins-header p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.search-container {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search-container input {
+  padding: 0.8rem 1rem;
+  width: 250px;
+  border-radius: 12px;
+  border: none;
+  background: #1b1b1b;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.search-container button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #00ffcc;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #00ccaa;
+}
+
+.featured-section, .search-results {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.featured-section h2, .search-results h2 {
+  color: #00ffcc;
+  margin-bottom: 1rem;
+}
+
+.skin-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skin-card {
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 240px;
+}
+
+.skin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+}
+
+.skin-card img {
+  width: 100%;
+}
+
+.skin-info {
+  padding: 1rem;
+}
+
+.skin-info h2 {
+  margin: 0.5rem 0;
+  color: #00ffcc;
+  font-size: 1.2rem;
+}
+
+.skin-info p {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 8px 16px;
+  background-color: #00ffcc;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #00ccaa;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.4;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ffcc;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin: 10px;
+}
+
+.home-button:hover {
+  background-color: #00ccaa;
+}

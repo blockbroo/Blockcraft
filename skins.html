@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skins | Shadow Marketplace</title>
+  <link rel="stylesheet" href="skins.css" />
+</head>
+<body>
+
+  <header class="skins-header">
+    <h1>Minecraft Skins</h1>
+    <p>Explore trending skins or search any Minecraft player!</p>
+  </header>
+  
+  <a href="storee.html" class="home-button">Home</a>
+
+  <div class="search-container">
+    <input type="text" id="usernameInput" placeholder="Enter Minecraft username..." />
+    <button onclick="getSkin()">Search</button>
+  </div>
+
+  <section class="featured-section">
+    <h2>Featured Skins</h2>
+    <div id="featuredSkins" class="skin-grid"></div>
+  </section>
+
+  <section id="searchResults" class="search-results">
+    <h2>Search Results</h2>
+    <div id="skinResult" class="skin-grid"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shadow Marketplace</p>
+  </footer>
+
+  <script>
+    const featuredUsers = ["Dream", "Technoblade", "Notch", "Herobrine", "Steve", "Alex"];
+
+    window.onload = () => {
+      const container = document.getElementById("featuredSkins");
+      featuredUsers.forEach(async (user) => {
+        try {
+          const uuidRes = await fetch(`https://api.mojang.com/users/profiles/minecraft/${user}`);
+          if (!uuidRes.ok) return;
+          const { id } = await uuidRes.json();
+          const skinUrl = `https://crafatar.com/renders/body/${id}?overlay`;
+          const skinCard = `
+            <div class="skin-card">
+              <img src="${skinUrl}" alt="${user}'s Skin">
+              <div class="skin-info">
+                <h2>${user}</h2>
+                <a href="https://crafatar.com/skins/${id}" target="_blank" class="download-btn">Download</a>
+              </div>
+            </div>`;
+          container.innerHTML += skinCard;
+        } catch (err) {}
+      });
+    };
+
+    async function getSkin() {
+      const username = document.getElementById("usernameInput").value.trim();
+      const resultContainer = document.getElementById("skinResult");
+      resultContainer.innerHTML = "";
+
+      if (!username) return;
+
+      try {
+        const uuidRes = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
+        if (!uuidRes.ok) throw new Error("User not found");
+        const uuidData = await uuidRes.json();
+        const uuid = uuidData.id;
+        const skinUrl = `https://crafatar.com/renders/body/${uuid}?overlay`;
+
+        const result = `
+          <div class="skin-card">
+            <img src="${skinUrl}" alt="${username}'s Skin">
+            <div class="skin-info">
+              <h2>${username}</h2>
+              <p>From Mojang API</p>
+              <a href="https://crafatar.com/skins/${uuid}" target="_blank" class="download-btn">Download Skin</a>
+            </div>
+          </div>`;
+        resultContainer.innerHTML = result;
+      } catch {
+        resultContainer.innerHTML = "<p>Skin not found.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
